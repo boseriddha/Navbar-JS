@@ -1,0 +1,89 @@
+.hidden {
+    display: none;
+}
+
+img[alt="logo"] {
+    grid-area: logo;
+}   
+
+.social-icons {
+    grid-area: icons;
+}
+
+.show-links {
+    grid-area: links;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    height: 3rem;
+}
+
+.nav-links {
+    width: 20rem;  
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
+nav {
+    display: grid;
+    grid-template-areas: 'logo links icons';
+}
+
+.hide-links {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s linear;
+}
+
+@media(max-width: 768px) {
+    ul {
+        list-style-type: none;
+    }
+
+    .social-icons {
+        display: none;
+    }
+
+    .hidden {
+        display: inline;
+        grid-area: button;
+        width: fit-content;
+        position: absolute;
+        right: 0rem;
+    }
+
+    .show-links {
+        grid-area: links;
+        list-style-type: none;
+        display: block;
+        height: 100%;
+        transition: all 0.3s linear;
+    }
+
+    .show-links li {
+        list-style-type: none;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-logo {
+        grid-area: logo;
+        width: fit-content;
+    }
+
+    nav {
+        display: grid;
+        grid-template-areas: 
+        "logo"
+        "links";
+        padding: 1rem;
+    }
+}
